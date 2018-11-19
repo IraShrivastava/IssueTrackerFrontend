@@ -1,45 +1,39 @@
 <div class="background">
-<nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a style="font-size:2.5em; color: white" class="navbar-brand" href="/">Issue-Tracker</a>
+    <button class="btn btn-outline-light btn-lg" (click)="goToSignUp()" style="cursor: pointer;">Sign-Up</button>
+ </nav>
+   <div class="row p-0 m-0">
 
-  <a style="font-size:2.5em; color: white"  class="navbar-brand" href="/">Issue-Tracker</a>
+    <div class="col-sm"></div>
 
-  
+    <div class="col-sm p-5">
 
-       <button class="btn btn-outline-light btn-lg" (click)="goToSignUp()" style="cursor: pointer;">Sign-Up</button>
+      <h2 class="form-signin-heading" style="color: white">Welcome To Issue-Tracker</h2>
+      <hr>
+      <label for="inputEmail" class="sr-only">Email address</label>
 
-  
+      <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" placeholder="Email address" required
+        autofocus>
 
-</nav>
+      <br>
 
-<div class="row p-0 m-0">
+      <label for="inputPassword" class="sr-only">Password</label>
 
-  <div class="col-sm"></div>
+      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" placeholder="Password"
+        required>
 
-  <div class="col-sm p-5">
+      <br>
 
-    <h2 class="form-signin-heading" style="color: white">Welcome To Issue-Tracker</h2>
-    <hr>
-    <label for="inputEmail" class="sr-only">Email address</label>
+      <button class="btn btn-lg btn-outline-light btn-block" type="button" (click)="signinFunction()">Sign in</button>
 
-    <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" placeholder="Email address" required autofocus>
+      <br>
 
-    <br>
+      <button class="btn btn-lg btn-outline-danger btn-block" type="button" (click)="googleLogin()">Login With Google</button>
 
-    <label for="inputPassword" class="sr-only">Password</label>
+    </div>
 
-    <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" placeholder="Password" required>
-
-    <br>
-
-    <button class="btn btn-lg btn-outline-light btn-block" type="button" (click)="signinFunction()">Sign in</button>
-
-    <br>
-
-    <button class="btn btn-lg btn-outline-danger btn-block" type="button" (click)="googleLogin()" >Login With Google</button>
+    <div class="col-sm"></div>
 
   </div>
-
-  <div class="col-sm"></div>
-
-</div>
 </div>

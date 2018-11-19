@@ -1,28 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
-    <a class="navbar-brand" href="/">My Chat</a>
-  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-  
-      <span class="navbar-toggler-icon"></span>
-  
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  
-      <ul class="navbar-nav mr-auto">
-  
-        <li class="nav-item">
-  
-          <a class="nav-link" (click)="goToSignIn()">Sign-In</a>
-  
-        </li>
-  
-      </ul>
-  
-    </div>
-  
+<div  class="background">
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a style="font-size:2.5em; color: white" class="navbar-brand" href="/">Issue-Tracker</a>
+    <button class="btn btn-outline-light btn-lg" (click)="goToSignIn()" style="cursor: pointer;">Sign-In</button>
   </nav>
   
   <div class="row p-0 m-0">
@@ -31,11 +10,11 @@
   
     <div class="col-sm p-5">
   
-      <h2 class="form-signin-heading">Sign Up To Start Chat</h2>
+      <h2 class="form-signin-heading" style="color: white">Sign Up To Track your Issue</h2>
   
       <br>
   
-      <span>FirstName: </span>
+      <span style="color: white">FirstName: </span>
   
       <label for="inputFirstName" class="sr-only">FirstName</label>
   
@@ -43,7 +22,7 @@
   
       <br>
   
-      <span>LastName: </span>
+      <span style="color: white">LastName: </span>
   
       <label for="inputLastName" class="sr-only">LastName</label>
   
@@ -51,7 +30,7 @@
   
       <br>
   
-      <span>Mobile: </span>
+      <span style="color: white">Mobile: </span>
   
       <label for="inputMobile" class="sr-only">Mobile</label>
   
@@ -59,7 +38,7 @@
   
       <br>
   
-      <span>Email: </span>
+      <span style="color: white">Email: </span>
   
       <label for="inputEmail" class="sr-only">Email address</label>
   
@@ -67,19 +46,20 @@
   
       <br>
   
-      <span>Password: </span>
+      <span style="color: white">Password: </span>
   
       <label for="inputPassword" class="sr-only">Password</label>
   
       <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" placeholder="Password" required>
       <br>
   
-      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="signupFunction()">Sign Up</button>
+      <button class="btn btn-lg btn-outline-light btn-block" type="button" (click)="signupFunction()">Sign Up</button>
   
     </div>
   
     <div class="col-sm"></div>
   
+  </div>
   </div>
   
   
