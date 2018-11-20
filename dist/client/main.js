@@ -622,17 +622,18 @@ var DashboardComponent = /** @class */ (function () {
             for (var _i = 0, _a = response['data']; _i < _a.length; _i++) {
                 var details = _a[_i];
                 if (details.watcherId === _this.cookieService.get('userId')) {
-                    for (var _b = 0, _c = _this.allData; _b < _c.length; _b++) {
-                        var data = _c[_b];
-                        if (details.issueId === data.issueId) {
-                            _this.watch.push(data);
+                    if (_this.allData !== null) {
+                        for (var _b = 0, _c = _this.allData; _b < _c.length; _b++) {
+                            var data = _c[_b];
+                            if (details.issueId === data.issueId) {
+                                _this.watch.push(data);
+                            }
                         }
                     }
                 }
             }
         });
         this.appService.getNotification().subscribe(function (response) {
-            console.log(response);
             _this.notifications.push(response['data']);
             for (var _i = 0, _a = _this.notifications; _i < _a.length; _i++) {
                 var x = _a[_i];
@@ -650,7 +651,6 @@ var DashboardComponent = /** @class */ (function () {
                             descrip: des
                         };
                         _this.notifyData.push(data);
-                        console.log(_this.count.length);
                     }
                 }
             }

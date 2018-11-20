@@ -58,16 +58,17 @@ export class DashboardComponent implements OnInit {
         console.log(error)
       }
     )
-
     this.appService.getWatchList().subscribe(
       (response) => {
         for (let details of response['data']) {
           if (details.watcherId === this.cookieService.get('userId')) {
+            if(this.allData !== null){
             for (let data of this.allData) {
               if (details.issueId === data.issueId) {
                 this.watch.push(data)
               }
             }
+          }
           }
         }
       }
@@ -75,7 +76,6 @@ export class DashboardComponent implements OnInit {
 
     this.appService.getNotification().subscribe(
       (response) => {
-        console.log(response)
         this.notifications.push(response['data'])
         for (let x of this.notifications) {
           for (let y of x) {
@@ -89,7 +89,6 @@ export class DashboardComponent implements OnInit {
                 descrip: des
               }
               this.notifyData.push(data)
-              console.log(this.count.length)
             }
           }
         }
