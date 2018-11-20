@@ -77,7 +77,9 @@ export class DashboardComponent implements OnInit {
     this.appService.getNotification().subscribe(
       (response) => {
         this.notifications.push(response['data'])
+        
         for (let x of this.notifications) {
+          if(x !== null){
           for (let y of x) {
             if(y.notificationCount === 1){
             this.count.push(y.notificationCount)}
@@ -92,6 +94,7 @@ export class DashboardComponent implements OnInit {
             }
           }
         }
+      }
         if(this.count.length===0){
           return this.notifyToggler = true
         }
