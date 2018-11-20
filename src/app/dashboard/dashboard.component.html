@@ -44,10 +44,12 @@
       <ul class="cardOne" *ngFor="let x of allSearchData.slice().reverse()">
         <li class="card shadow-lg  rounded" style="width: 18rem;">
           <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Title</h6>
             <h5 class="card-title">{{x.title | uppercase}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Reporter: {{x.reporter}}</h6>
             <p class="card-text">{{x.description}}</p>
             <h6 class="card-subtitle mb-2 text-muted">Assigned To: {{x.assignedTo}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Status: {{x.status}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Created On: {{x.createdOn | date}}</h6>
             <a class="card-link" [routerLink]="['/issue-view/',x.issueId]">View Issue</a>
           </div>
@@ -61,6 +63,29 @@
     </div>
   </div>
   <div *ngIf="toggler">
+      <div class="container" style="border: 2px solid white; padding: 1em; border-radius: 20px; margin-bottom: 20px"
+      *ngIf="assignedIssue.length>0">
+      <h2 style="color: white; text-align: center; padding: .5em">Assigned-Issue</h2>
+      <div class="container-fluid scrolling-wrapper-flexbox" id="scrollBacklog">
+        <ul class="cardOne" *ngFor="let x of assignedIssue.slice().reverse()">
+          <li class="card shadow-lg  rounded" style="width: 18rem;">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Title:-</h6>
+              <h5 class="card-title">{{x.title | uppercase}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Reporter: {{x.reporter}}</h6>
+              <p class="card-text">{{x.description}}</p>
+              <h6 class="card-subtitle mb-2 text-muted">Status: {{x.status}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Created On: {{x.createdOn | date}}</h6>
+              <a class="card-link" [routerLink]="['/issue-view/',x.issueId]">View Issue</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" (click)="scrollPreviousBacklog()">Previous</button>
+        <button id="buttonBacklog" class="btn btn-outline-light my-2 my-sm-0" type="submit" (click)="scrollNextBacklog()">Next</button>
+      </div>
+    </div>
     <div class="container" style="border: 2px solid white; padding: 1em; border-radius: 20px; margin-bottom: 20px"
       *ngIf="backlogs.length>0">
       <h2 style="color: white; text-align: center; padding: .5em">Backlogs</h2>

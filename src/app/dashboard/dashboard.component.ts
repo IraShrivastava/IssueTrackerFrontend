@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   public inTest = [];
   public done = [];
   public watch = []
+  public assignedIssue = [];
   public allData
   public allSearchData: any = []
   public notifications = []
@@ -37,6 +38,9 @@ export class DashboardComponent implements OnInit {
         this.allData = response['data'];
         if (this.allData !== null) {
           for (let x of this.allData) {
+            if(x.assignedToId === this.cookieService.get('userId')){
+              this.assignedIssue.push(x);
+            }
             switch (x.status) {
               case 'Backlog':
                 this.backlogs.push(x);
